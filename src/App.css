@@ -1,38 +1,139 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  transition: 0.4s;
+  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Quicksand", sans-serif;
+  font-family: "Titillium Web", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  color: var(--secondary);
+  overflow: scroll;
+  scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(50vh);
+  scroll-snap-type: y mandatory;
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* nav bar */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav {
+  width: 100%;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.747);
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-around;
+  box-shadow: 0px 0px 11px rgba(122, 0, 0, 0.356);
+  position: fixed;
+  z-index: 2;
+}
+ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.donateBtn {
+  background-color: rgba(214, 3, 3, 0.514);
+  height: 35px;
+  width: 80px;
+  margin: 5px;
+  border-radius: 5px;
+  border: none;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  text-decoration: none;
+  color: black;
 }
 
-.App-link {
-  color: #61dafb;
+.donateBtn:hover {
+  background-color: rgb(214, 3, 3);
+  cursor: pointer;
+  transition: all 0.5s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+/* link btn */
+
+.btn {
+  background-color: rgba(255, 255, 255, 0);
+  height: 35px;
+  width: 80px;
+  margin: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+.btn:hover {
+  background-color: rgba(95, 13, 51, 0.274);
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+/* home page */
+
+.homeContainer {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-around;
+}
+
+.homeContainer div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homeContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.homeContainer h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.homeContainer span {
+  animation: blink 2s infinite;
+  user-select: none;
+}
+
+@keyframes blink {
   to {
-    transform: rotate(360deg);
+    opacity: 0;
   }
+}
+
+/* about page */
+
+.aboutContainer {
+  height: 100vh;
+  width: 100vw;
+  background-color: red;
+}
+
+/* videos page */
+
+.videosContainer {
+  height: 100vh;
+  width: 100vw;
+  background-color: red;
 }
