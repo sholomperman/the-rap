@@ -1,4 +1,3 @@
-import React from 'react';
 import '../App.css';
 import Btn from './LinkBtn';
 import { Link } from "react-router-dom";
@@ -6,7 +5,7 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
     <nav>
-      <Link to='/'><img src="#" alt="#" /></Link>
+      <Link to='/'><img src="https://i.pinimg.com/originals/45/7c/c0/457cc040ca23e98d84f70d215111255c.png" alt="#" /></Link>
       <ul>
         <li><Btn to='/' label='Home'/></li>
         <li><Btn to='/About' label='About'/></li>
