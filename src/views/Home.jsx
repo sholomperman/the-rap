@@ -1,5 +1,4 @@
 import { React, useState, useEffect } from 'react';
-import About from './About';
 import '../App.css';
 
 const Home = () => {
@@ -58,7 +57,6 @@ console.log(ingCount)
           </span>
         </div>
     </div>
-    <About />
     </>
   )
 }
