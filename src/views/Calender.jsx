@@ -17,19 +17,23 @@ const localizer = dateFnsLocalizer({
     getDay,
     locales,
 });
-
+const time = '24:00'
 const events = [
     {
         title: "pesach brake",
-        start: 'february 01, 2022, 10:00:00',
-        end: 'february 10, 2022, 10:00:00',
-        yeshivaBrake: false,
+        start: 'february 01, 2022',
+        end: 'february 10, 2022',
+        startHebrew:"5773 ,כח, שוט",
+        endHebrew:"5773 ,כח, שוט",
+        yeshivaBreak : false,
     },
     {
         title: "return after pesach",
-        start: 'february 10, 2022, 00:00:00',
-        end: 'march 10, 2022, 10:00:00',
-        yeshivaBrake: true,
+        start: 'february 10, 2022',
+        end: 'february 15, 2022',
+        startHebrew:"5773 ,כח, שוט",
+        endHebrew:"5773 ,כח, שוט",
+        yeshivaBreak: true,
     },
 ];
 
@@ -38,14 +42,14 @@ const Calender = () => {
   return (
     <>
       <div className="calendarContainer">
-      <Calendar
-        views={['month']}
-        localizer={localizer}
-        events={events}
-        startAccessor="start"
-        endAccessor="end"
+        <Calendar
+          views={['month']}
+          localizer={localizer}
+          events={events}
+          startAccessor="start"
+          endAccessor="end"
         style={{ width: '45%', height: '80%', margin: '60px auto' }}
-        eventPropGetter={(events) => {const backgroundColor = events.yeshivaBrake ? '#177e89' : '#ed2126'; return { style: { backgroundColor } } }}
+        eventPropGetter={(events) => {const backgroundColor = events.yeshivaBreak ? '#177e89' : '#ed2126'; return { style: { backgroundColor } } }}
         />
       
       
@@ -53,9 +57,32 @@ const Calender = () => {
         {
           events.map((i) => (
             <div>
-              <h1>{i.title}</h1>
-              <p>{i.start}</p>
-              <p>{i.end}</p>
+              <div className="left">
+                {i.yeshivaBreak
+                  
+                  ?
+
+                  <span
+                    style={{ fontSize: '60px',}}
+                    className="material-icons-round">school</span>
+
+                  :
+
+                    <span
+                    style={{ fontSize: '60px', textAlign: 'center' }}
+                    className="material-icons-round">home</span>}
+                <h1>{i.title}</h1>
+              </div>
+              <div className="right">
+                <div>
+                  <p>{i.start}</p>
+                  <p>{i.end}</p>
+                </div>
+                <div>
+                  <p>{i.endHebrew}</p>
+                  <p>{i.endHebrew}</p>
+                </div>
+                </div>
             </div>
           ))
         }
