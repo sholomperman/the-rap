@@ -163,7 +163,6 @@ nav img {
 .aboutContainer {
   height: 100vh;
   width: 100vw;
-  background-color: red;
 }
 
 /* videos page */
@@ -255,23 +254,70 @@ nav img {
 .calendarContainer {
   height: 100vh;
   width: 100vw;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--orangColor);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.calendarAgenda {
+  height: 100vh;
+  width: 35%;
+  background-color: var(--primaryColor);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.calendarAgenda div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100px;
+  width: 300px;
+  background-color: var(--orangColor);
+  border-radius: 5px;
+}
+
+.calendarAgenda div h1 {
+  font-size: 30px;
+}
+
+.calendarAgenda div p {
+  font-size: 20px;
+}
+
+/* about page */
+
+.aboutContainer {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.top h1 {
+  font-size: xx-large;
+}
+
+.bottom {
+  height: 50vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.bottom div {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.calendarAgenda {
-  height: 100vh;
-  width: 100vw;
-  background-color: var(--primaryColor);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.calendarAgenda div {
-  height: 100px;
-  width: 300px;
-  /* display: flex; */
+.bottom div img {
+  border-radius: 15px;
 }

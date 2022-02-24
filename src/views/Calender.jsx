@@ -21,14 +21,14 @@ const localizer = dateFnsLocalizer({
 const events = [
     {
         title: "pesach brake",
-        start: 'february 01, 2022 00:00:00',
-        end: 'february 10, 2022 10:00:00',
+        start: 'february 01, 2022, 10:00:00',
+        end: 'february 10, 2022, 10:00:00',
         yeshivaBrake: false,
     },
     {
         title: "return after pesach",
-        start: 'february 10, 2022 00:00:00',
-        end: 'march 10, 2022 10:00:00',
+        start: 'february 10, 2022, 00:00:00',
+        end: 'march 10, 2022, 10:00:00',
         yeshivaBrake: true,
     },
 ];
@@ -44,22 +44,22 @@ const Calender = () => {
         events={events}
         startAccessor="start"
         endAccessor="end"
-          style={{ zIndex: '1', width: '50%', height: '90%', margin: '60px' }}
-        eventPropGetter={(events) => {const backgroundColor = events.yeshivaBrake ? '#ed8146' : '#177e89'; return { style: { backgroundColor } } }}
+        style={{ width: '45%', height: '80%', margin: '60px auto' }}
+        eventPropGetter={(events) => {const backgroundColor = events.yeshivaBrake ? '#177e89' : '#ed2126'; return { style: { backgroundColor } } }}
         />
-      </div>
       
-
+      
       <div className="calendarAgenda">
         {
           events.map((i) => (
             <div>
               <h1>{i.title}</h1>
-              <h1>{i.start}</h1>
-              <h1>{i.end}</h1>
+              <p>{i.start}</p>
+              <p>{i.end}</p>
             </div>
           ))
         }
+        </div>
       </div>
       </>
   )
