@@ -289,3 +289,35 @@ nav img {
 .calendarAgenda div p {
   font-size: 20px;
 }
+
+/* about page */
+
+.aboutContainer {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.top h1 {
+  font-size: xx-large;
+}
+
+.bottom {
+  height: 50vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.bottom div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bottom div img {
+  border-radius: 15px;
+}
