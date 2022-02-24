@@ -32,7 +32,6 @@ const Home = () => {
       };
     });
   
-console.log(ingCount)
     return (
     <>
     <div className="homeContainer">
@@ -47,7 +46,7 @@ console.log(ingCount)
           
           <div className="circleContainer">
               {images.map((item) => (
-                <span onClick={() => { setIngCount(item.id); }} className={item.id == ingCount ? "material-icons-round" : "material-icons-outlined"} style={{ fontSize: '25px', marginRight: '15px', cursor: 'pointer' }}>{item.id == ingCount ? "circle" : "radio_button_unchecked"}</span>
+                <span key={item.id} onClick={() => { setIngCount(item.id); }} className={item.id == ingCount ? "material-icons-round" : "material-icons-outlined"} style={{ fontSize: '25px', marginRight: '15px', cursor: 'pointer' }}>{item.id == ingCount ? "circle" : "radio_button_unchecked"}</span>
           ))}
           </div>
           <span
