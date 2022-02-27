@@ -1,11 +1,6 @@
 import { React, useState } from "react";
 
-  const images = {
-    name: "name",
-    src: "https://images.unsplash.com/photo-1645390786282-af647b6acd7a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=867&q=80",
-  }
-
-const Contact = () => {
+const Contact = ({apiContact}) => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -21,11 +16,11 @@ const Contact = () => {
     })
   }
 
-
+  console.log(apiContact)
   return (
     <div className="contactContainer">
       <div className="left">
-        <img src={images.src} alt="#" />
+        <img src={apiContact.data.attributes.image.data[0].attributes.caption} alt="" />
       </div>
       <div className="right">
         <form action="post">
