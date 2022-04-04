@@ -107,6 +107,28 @@ nav img {
   transition: all 0.5s ease;
 }
 
+/* error rout */
+
+.errorRout {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.errorRout * {
+  color: red;
+  font-size: 300%;
+}
+
+.errorRout div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* home page */
 
 .homeContainer {
@@ -156,14 +178,6 @@ nav img {
   top: 90%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-/* videos page */
-
-.videosContainer {
-  height: 100vh;
-  width: 100vw;
-  background-color: red;
 }
 
 /* contact page */
@@ -247,7 +261,7 @@ nav img {
 .calendarContainer {
   height: 100vh;
   width: 100vw;
-  background-color: var(--orangColor);
+  background-color: var(--primaryColor);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -257,7 +271,7 @@ nav img {
 .calendarAgenda {
   height: 100vh;
   width: 35%;
-  background-color: var(--primaryColor);
+  background-color: var(--secondaryColor);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -329,7 +343,6 @@ nav img {
   width: 100vw;
   display: flex;
   justify-content: space-evenly;
-  /* flex-wrap: wrap; */
 }
 
 .bottom div {
@@ -349,20 +362,81 @@ nav img {
   text-align: center;
 }
 
-/* donate page */
+/* gallery page */
 
-.donateContainer {
+.galleryContainer {
   height: 100vh;
   width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 }
 
-.donateContainer input {
-  margin-bottom: 50px;
-  height: 40px;
+.topGallery {
+  height: 40%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.topGallery h1 {
+  font-size: 300%;
+}
+
+.bottomGallery {
+  height: 60%;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.bottomGallery div {
   width: 200px;
-  text-align: center;
+  height: 200px;
+  border-radius: 5px;
+  border: 3px solid rgb(0, 0, 0);
+  margin: 10px 0;
+}
+
+.bottomGallery div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bottomGallery div:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  -webkit-transform: scale3d(1.1, 1.1, 1.1);
+  transform: scale3d(1.1, 1.1, 1.1);
+}
+
+.imgBigContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.imgBig {
+  -webkit-transition: background-color 0.15s ease 0s;
+  -o-transition: background-color 0.15s ease 0s;
+  transition: background-color 0.15s ease 0s;
+  object-fit: cover;
+  width: 40vw;
+  height: 60vh;
+}
+.ex {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #ffff;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.ex:hover {
+  color: red;
+  font-weight: bold;
 }
