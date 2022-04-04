@@ -1,63 +1,52 @@
-import { React, useState } from "react";
+import { React, useRef } from "react";
+import emailjs from "@emailjs/browser";
 
-const Contact = ({apiContact}) => {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    message: ""
-  })
-  console.log("form data", formData)
+const Contact = ({ apiContact }) => {
+  const form = useRef();
 
-  const handelChange = e => {
-    setFormData({
-      ...formData,
-        [e.target.name]: e.target.value
-    })
-  }
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_xmx2oh5",
+        "template_9gz3vww",
+        form.current,
+        "B0je7i5ZxwpRmO2cT"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  };
 
-  console.log(apiContact)
   return (
     <div className="contactContainer">
       <div className="left">
-        <img src={apiContact.data.attributes.image.data[0].attributes.caption} alt="" />
+        {apiContact.length === [] ? null : (
+          <img src={apiContact[0]?.img} alt={apiContact[0]?.name} />
+        )}
       </div>
       <div className="right">
-        <form action="post">
-        <h1>Got any question? Let’s talk about it.</h1>
-          <input
-            name="firstName"
-            value={formData.firstName}
-            onChange={handelChange}
-            type="text"
-            placeholder="First Name"
-          />
-          <input
-            name="lastName"
-            value={formData.lastName}
-            onChange={handelChange}
-            type="text"
-            placeholder="Last Name"
-          />
-          <input
-            name="email"
-            value={formData.email}
-            onChange={handelChange}
-            type="email"
-            placeholder="Email"
-          />
+        <form ref={form} onSubmit={sendEmail}>
+          <h1>Got any question? Let’s talk about it.</h1>
+          <input name="first-name" type="text" placeholder="First Name" />
+          <input name="last-name" type="text" placeholder="Last Name" />
+          <input name="email" type="email" placeholder="Email" />
           <textarea
             name="message"
-            value={formData.message}
-            onChange={handelChange}
             type="message"
             placeholder="Enter a Message"
           />
-          <button>Submit</button>
+          <input type="submit" value="Send" />
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
